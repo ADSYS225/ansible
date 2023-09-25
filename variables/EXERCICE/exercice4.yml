@@ -1,0 +1,20 @@
+---
+- name: Exercice pratique 4 Ansible
+  hosts: testlab
+  tasks:
+    - name: copy file with owner and permission
+      copy:
+        src: /srv/foo.conf
+        dest: /etc/foo.conf
+        owner: ubuntu
+        group: ubuntu
+        mode: u=rw,g=r,o=r
+      become: yes
+
+    - name: Create a symbolic link
+      file:
+        src: /etc/foo.conf
+        dest: /tmp/foo.conf
+        owner: ubuntu
+        group: ubuntu
+        state: link

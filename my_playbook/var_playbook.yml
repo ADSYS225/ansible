@@ -1,0 +1,6 @@
+---
+- name: Example with vars
+  hosts: all
+  vars:
+    user_name: koudou
+    user_description: "Standard user"

@@ -1,0 +1,8 @@
+---
+- name: First apt playbook
+  hosts: all
+  tasks:
+    - name: install the python3
+      apt:
+        name: python3
+        state: present

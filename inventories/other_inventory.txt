@@ -1,0 +1,1 @@
+client1 ansible_connection=ssh ansible_user=root ansible_password=koudou ansible_host=10.5.43.3

@@ -1,0 +1,23 @@
+# Enregistrer le résultat d'une boucle d'affichage des éléments
+# de la liste {"un","deux"} dans une variable "numbers"
+#
+# Afficher un message d'erreur lorsque le code de retour 
+# du résultat est différent de 0 (Utiliser le module ansible.builtin.fail)
+
+---
+- name: Exercice pratique 1 avec des boucle
+  hosts: testlab
+  tasks:
+    - name: Register loop output as a variable
+      shell:
+        cmd: "echo {{ item }}"
+      loop:
+       - "un"
+       - "deux"
+      register: numbers
+
+    - name: Fail if return code is not 0
+      ansible.builtin.fail:
+        msg: "The command ({{item.cmd}}) did not have a 0 return code"
+      when: item.rc != 0
+      loop: "{{numbers.results}}"

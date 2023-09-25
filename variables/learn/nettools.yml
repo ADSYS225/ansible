@@ -1,0 +1,8 @@
+---
+- name: istall net tools
+  hosts: all
+  tasks:
+    - name: install net-tools
+      apt:
+        name: net-tools
+        state: present

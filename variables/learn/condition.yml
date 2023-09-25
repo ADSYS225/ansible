@@ -1,0 +1,13 @@
+---
+- name : condition playbook
+  hosts: all
+  vars:
+    package: apache2
+    require: "yes"
+
+  tasks:
+    - name: Service Up
+      when: require == "yes"
+      systemd:
+        name: "{{package}}"
+        state: stopped

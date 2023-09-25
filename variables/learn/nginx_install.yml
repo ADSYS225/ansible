@@ -1,0 +1,16 @@
+---
+- name: nginx installing
+  hosts: all
+  vars:
+    package: nginx
+
+  tasks:
+    - name: ensure nginx is present
+      apt:
+        name: "{{package}}"
+        state: present
+
+    - name: Service Up
+      service:
+        name: "{{package}}"
+        state: started

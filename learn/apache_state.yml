@@ -1,0 +1,15 @@
+---
+- name: Apache state playbook
+  hosts: all
+  vars:
+    package: apache2
+  tasks:
+    - name: ensure apache is present
+      apt:
+        name: "{{package}}"
+        state: present
+    - name: service Up
+      service:
+        name: "{{ package}}"
+        state: started
+

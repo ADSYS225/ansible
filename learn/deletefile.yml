@@ -1,0 +1,9 @@
+---
+- name: delete simple file
+  hosts: all
+
+  tasks:
+    - name: delete copy.yml from the server
+      file:
+        state: absent
+        path: /root/test/copy.yml

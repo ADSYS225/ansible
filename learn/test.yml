@@ -1,0 +1,17 @@
+---
+- name: Test
+  hosts: all
+    #vars:
+    #regions:
+    # - northeast
+    # - southeast
+    # - midwest
+
+  tasks:
+    - name: " loop through list"
+      debug:
+        msg:
+          with_items:
+            - koudou
+            - yale
+            - brice

@@ -1,0 +1,9 @@
+---
+- name: Ping playBook
+  hosts: client1
+  become: yes
+
+  tasks:
+    - name: Pinging server
+      ansible.builtin.ping:
+        data: pong

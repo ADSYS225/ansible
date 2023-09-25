@@ -1,0 +1,14 @@
+---
+- name: PlayBook17
+  hosts: all
+  tasks:
+    - name: copy file
+      copy: src=/root/learn/quiz17.yml dest=/root/test/devops.txt
+    - register: result
+      stat:
+        path: /root/test/devops.txt
+    - name : ensure apache is at the latest version
+      when: result.stat.exists
+      apt:
+        name: "apache2"
+        state: latest

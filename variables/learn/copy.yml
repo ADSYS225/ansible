@@ -1,0 +1,11 @@
+#Write a simple playbook to
+#copy /root/* file inside all webservers in
+#The /root/test directory
+#
+---
+- name: copy file playbook
+  hosts: all
+  tasks:
+    - name: ensure file is copied at /root/test of servers
+      copy: src=/root/learn/copy.yml  dest=/root/test/
+

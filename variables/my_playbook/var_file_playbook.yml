@@ -1,0 +1,9 @@
+---
+- name: Example with file
+  hosts: all
+  vars_files:
+    - /root/variables/first_ansible_vars_file.yml
+  tasks:
+    - name: Show user name
+      debug:
+        msg: "{{user_name}}-{{user_description}}"

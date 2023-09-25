@@ -1,0 +1,19 @@
+$TTL 86400
+@ IN SOA dns-primary.tesrov.lab. admin@tesrov.lab. (
+		2020011800 ;Serial
+		3600 ;Refresh
+		1800 ;Retry
+		604800 ;Expire
+		86400 ;Minimum TTL
+)
+;Name Server Information
+@ IN NS dns-primary.tesrov.lab.
+;IP Address for Name Server
+dns-primary.tesrov.lab IN A 10.5.43.13
+;Mail Server MX record
+tesrov.lab IN MX 10 mail.tesrov.lab.
+;A record for the following hostname
+www IN A 10.5.43.13
+mail IN A 10.5.43.13
+; CNAME Record
+ftp IN CNAME www.tesrov.lab.

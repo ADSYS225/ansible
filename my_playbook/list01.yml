@@ -1,0 +1,13 @@
+---
+- name: Example with list
+  hosts: all
+  vars:
+    users:
+      koudou:
+        name: koudou
+        default_password: Password2023
+  
+  tasks:
+    - name: show user name
+      debug:
+        msg: "{{users['koudou']['name']}}"

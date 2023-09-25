@@ -1,0 +1,24 @@
+#Creer un job cron qui affiche la date actuelle
+#et qui s'execute chaque jour à 2H30 avec l'utilisateur rsergio
+#Puis supprimer cet utliisateur
+#
+#
+---
+- name: Exercice pratique 3 Ansible
+  hosts: testlab
+  tasks:
+    - name: Create cron date job
+      cron:
+        name: "display date"
+        minute: "30"
+        hour: "2"
+        user: "rsergio"
+        job: "date"
+      become: yes
+
+        #   - name: Remove the user 'rsergio'
+        #user:
+        # name: rsergio
+        #state: absent
+        #remove: yes
+        #become: yes

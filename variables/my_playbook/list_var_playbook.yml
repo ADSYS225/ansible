@@ -1,0 +1,14 @@
+---
+- name: Example with list
+  hosts: all
+  vars:
+    users:
+      - KOUDOU
+      - YALE
+      - BRICE
+      - GBALOU
+        
+    tasks:
+      - name: Show user name
+        debug:
+          msg: "{{users}}"

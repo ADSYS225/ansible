@@ -1,0 +1,13 @@
+#Write a simple playbook to create an 
+#empty file "devops.txt" under /root/test directory
+#
+#
+---
+- name: empty file creation
+  hosts: all
+  tasks:
+    - name: touch File
+      file:
+        path: /root/test/devops.txt
+        state: touch
+

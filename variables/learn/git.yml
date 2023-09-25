@@ -1,0 +1,8 @@
+---
+- name: Playbook for git installing
+  hosts: all
+  tasks:
+    - name: install git
+      apt:
+        name: git
+        state: present

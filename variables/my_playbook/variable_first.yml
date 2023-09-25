@@ -1,0 +1,11 @@
+---
+- name: Variable playbook
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: display var variable
+      command: echo {{var}}
+
+  vars:
+    - var: value_playbook

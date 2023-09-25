@@ -1,0 +1,9 @@
+---
+- name: creation de fichier
+  hosts: windows-serve
+  tasks:
+    - name: creatin du fichier dans un repertoire
+      win_file:
+        path: C:\Users\Administrateur\Documents\foo.conf
+        state: touch
+
